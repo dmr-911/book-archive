@@ -5,12 +5,17 @@ const getBooks = async () => {
     const input = document.getElementById('search-input');
     const value = input.value;
 
-    const url = `http://openlibrary.org/search.json?q=${value}`;
+    const url = `https://openlibrary.org/search.json?q=${value}`;
     const res = await fetch(url);
     const data = await res.json();
 
     input.value = '';
-    document.getElementById("total-books").innerText = data.docs.length;
+    if (data.docs.length === 0) {
+        document.getElementById("total-books").innerText = 'No';
+    } else {
+        document.getElementById("total-books").innerText = data.docs.length;
+    }
+    
     toggleSearch("block");
     displayBooks(data.docs)
 }
