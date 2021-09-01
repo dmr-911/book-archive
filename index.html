@@ -11,6 +11,7 @@
 <body>
     <header>
         <h2 class="text-center">Book Archive</h2>
+        <!-- Input area and search button  -->
         <div class="input-group mb-3 w-50 mx-auto">
             <input id="search-input" type="text" class="form-control" placeholder="search books" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="getBooks()" class="btn btn-outline-secondary" type="button">search</button>
@@ -19,8 +20,9 @@
             <p class="text-center fs-4"><span id="total-books"></span> results found</p>
         </div>
     </header>
-    
+
     <main>
+        <!-- books gallery -->
         <section class="container">
             <div id="books-container" class="row row-cols-1 row-cols-md-2 g-4">
             </div>
