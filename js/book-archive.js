@@ -12,7 +12,7 @@ const getBooks = async () => {
     const res = await fetch(url);
     const data = await res.json();
     input.value = '';
-    
+
     if (data.docs.length === 0) {
         document.getElementById("total-books").innerText = 'No';
     } else {
@@ -33,7 +33,7 @@ const displayBooks = books => {
         const url = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
         div.innerHTML = `
                     <div class="card">
-                        <img src="${url}? ${url} : 'No Image found'" class="card-img-top" alt="...">
+                        <img src="${url}?${url}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${book.title}</h5>
                             <p class="card-text">Author : ${book?.author_name}</p>
