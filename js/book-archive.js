@@ -1,6 +1,9 @@
+// toggler 
 const toggleSearch = displayStyle => {
     document.getElementById('searched').style.display = displayStyle;
 }
+
+// get and decode the url 
 const getBooks = async () => {
     const input = document.getElementById('search-input');
     const value = input.value;
@@ -8,8 +11,8 @@ const getBooks = async () => {
     const url = `https://openlibrary.org/search.json?q=${value}`;
     const res = await fetch(url);
     const data = await res.json();
-
     input.value = '';
+    
     if (data.docs.length === 0) {
         document.getElementById("total-books").innerText = 'No';
     } else {
@@ -19,6 +22,8 @@ const getBooks = async () => {
     toggleSearch("block");
     displayBooks(data.docs)
 }
+
+// display items to booksContainer
 const displayBooks = books => {
     const booksContainer = document.getElementById('books-container');
     booksContainer.textContent = '';
