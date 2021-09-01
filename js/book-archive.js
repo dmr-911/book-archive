@@ -16,11 +16,12 @@ const getBooks = async () => {
     if (data.docs.length === 0) {
         document.getElementById("total-books").innerText = 'No';
     } else {
-        document.getElementById("total-books").innerText = data.docs.length;
+        document.getElementById("total-books").innerText = data.numFound;
     }
     
     toggleSearch("block");
-    displayBooks(data.docs)
+    console.log(data);
+    displayBooks(data.docs);
 }
 
 // display items to booksContainer
