@@ -8,9 +8,14 @@ body{
     color: #7F16B1;
     background-color: white;
 }
+
 #books-container img{
     height: 300px;
     width: auto;
+}
+
+.bg-card{
+    background-color: rgb(52, 151, 151);
 }
 #searched, #toggle-spin{
     display: none;
