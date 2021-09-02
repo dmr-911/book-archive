@@ -1,3 +1,13 @@
+body{
+    background-image: url(../images/aaron-burden-QJDzYT_K8Xg-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-book-purple{
+    color: #7F16B1;
+    background-color: white;
+}
 #books-container img{
     height: 300px;
     width: auto;
