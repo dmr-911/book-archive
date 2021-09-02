@@ -47,7 +47,6 @@ const displayBooks = (books) => {
   booksContainer.textContent = "";
 
   books.forEach((book) => {
-    console.log(book);
     // creating and append a div 
     const div = document.createElement("div");
     div.classList.add("col");
