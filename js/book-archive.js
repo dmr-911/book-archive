@@ -59,6 +59,8 @@ const displayBooks = (books) => {
                             <p class="author card-text">Author : ${book.author_name? book.author_name: "Unknown Author"}</p>
                             <p class="card-text">First Published : ${book.first_publish_year
                                 ? book.first_publish_year: "Unknown Year"}</p>
+                            <p class="card-text">Publisher : ${book.publisher[0]
+                                ? book.publisher[0].slice(0, 14): "Unknown Year"}</p>
                         </div>
                     </div>
         `;
