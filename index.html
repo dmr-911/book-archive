@@ -5,26 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Archive</title>
+    <!-- bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom css  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- fontawsome kit -->
+    <script src="https://kit.fontawesome.com/15c1546edc.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h2 class="text-center">Book Archive</h2>
+        <h2 class="text-center"><i class="fas fa-book-open"></i> Book Archive <i class="fas fa-journal-whills"></i></h2>
         <!-- Input area and search button  -->
         <div class="input-group mb-3 w-50 mx-auto">
             <input id="search-input" type="text" class="form-control" placeholder="search books" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button onclick="getBooks()" class="btn btn-outline-secondary" type="button">search</button>
+            <button onclick="getBooks()" class="btn btn-dark text-white" type="button">search</button>
         </div>
-        <div id="searched">
-            <p class="text-center fs-4"><span id="total-books"></span> results found</p>
+        <div class="w-25 mx-auto d-flex justify-content-center">
+            <button id="toggle-spin" class="btn btn-primary" type="button">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
         </div>
     </header>
 
     <main>
         <!-- books gallery -->
-        <section class="container">
-            <div id="books-container" class="row row-cols-1 row-cols-md-2 g-4">
+        <section class="container" id="books-section">
+            <div id="searched" class="w-50 mx-auto rounded">
+                <p class="text-center fs-4"><span id="total-books"></span> results found</p>
+            </div>
+            <div id="books-container" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             </div>
         </section>
     </main>

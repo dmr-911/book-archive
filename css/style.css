@@ -1,7 +1,7 @@
 #books-container img{
-    height: 400px;
+    height: 300px;
     width: auto;
 }
-#searched{
+#searched, #toggle-spin{
     display: none;
 }
