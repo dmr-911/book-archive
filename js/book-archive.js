@@ -14,7 +14,7 @@ const toggleBody = displayStyle => {
 const getBooks = async () => {
   toggleSpinner('block');
   toggleBody('none');
-  
+
   const input = document.getElementById("search-input");
   const value = input.value;
 
@@ -52,15 +52,13 @@ const displayBooks = (books) => {
     div.classList.add("col");
     const url = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
     div.innerHTML = `
-                    <div class="card">
+                    <div class="card border border-2 border-dark">
                         <img src="${url}" class="card-img-top" alt="image of a reading book">
                         <div class="card-body bg-info">
                             <h5 class="card-title">${book.title ? book.title : "Unknown Name"}</h5>
                             <p class="author card-text">Author : ${book.author_name? book.author_name: "Unknown Author"}</p>
                             <p class="card-text">First Published : ${book.first_publish_year
                                 ? book.first_publish_year: "Unknown Year"}</p>
-                            <p class="card-text">Publisher : ${book.publisher
-                                 ? book.publisher : "Unknown Publisher"}</p>
                         </div>
                     </div>
         `;
