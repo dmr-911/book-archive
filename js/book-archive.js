@@ -3,17 +3,17 @@ const toggleSearch = displayStyle => {
   document.getElementById("searched").style.display = displayStyle;
 };
 const toggleSpinner = displayStyle => {
-  document.getElementById('toggle-spin').style.display = displayStyle;
+  document.getElementById("toggle-spin").style.display = displayStyle;
 }
 const toggleBody = displayStyle => {
-  document.getElementById('books-section').style.display = displayStyle;
+  document.getElementById("books-section").style.display = displayStyle;
 }
 
 
 // get and decode the url
 const getBooks = async () => {
-  toggleSpinner('block');
-  toggleBody('none');
+  toggleSpinner("block");
+  toggleBody("none");
 
   const input = document.getElementById("search-input");
   const value = input.value;
@@ -47,6 +47,7 @@ const displayBooks = (books) => {
   booksContainer.textContent = "";
 
   books.forEach((book) => {
+    console.log(book);
     // creating and append a div 
     const div = document.createElement("div");
     div.classList.add("col");
@@ -55,17 +56,18 @@ const displayBooks = (books) => {
                     <div class="card border border-2 border-dark">
                         <img src="${url}" class="card-img-top" alt="image of a reading book">
                         <div class="card-body bg-info">
-                            <h5 class="card-title">${book.title ? book.title : "Unknown Name"}</h5>
-                            <p class="author card-text">Author : ${book.author_name? book.author_name: "Unknown Author"}</p>
-                            <p class="card-text">First Published : ${book.first_publish_year
-                                ? book.first_publish_year: "Unknown Year"}</p>
-                            <p class="card-text">Publisher : ${book.publisher[0]
+                            <h5 class="card-title" title="${book.title}">${book.title ? book.title.slice(0, 14) : "Unknown Name"}</h5>
+                            <p class="author card-text" title="${book.author_name}">Author : ${book.author_name
+                            ?  book.author_name[0].slice(0, 14) : "Unknown Author"}</p>
+                            <p class="card-text">First Published : ${book.publish_date
+                                ? book.publish_date: "Unknown Date"}</p>
+                            <p class="card-text" title="${book.publisher}">Publisher : ${book.publisher
                                 ? book.publisher[0].slice(0, 14): "Unknown Year"}</p>
                         </div>
                     </div>
         `;
     booksContainer.appendChild(div);
-    toggleSpinner('none');
-    toggleBody('block');
+    toggleSpinner("none");
+    toggleBody("block");
   });
 };
