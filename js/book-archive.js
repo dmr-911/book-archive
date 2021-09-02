@@ -55,7 +55,7 @@ const displayBooks = (books) => {
     div.innerHTML = `
                     <div class="card border border-2 border-dark">
                         <img src="${url}" class="card-img-top" alt="image of a reading book">
-                        <div class="card-body bg-info">
+                        <div class="card-body bg-success text-white">
                             <h5 class="card-title" title="${book.title}">${book.title ? book.title.slice(0, 14) : "Unknown Name"}</h5>
                             <p class="author card-text" title="${book.author_name}">Author : ${book.author_name ?  book.author_name[0].slice(0, 14) : "Unknown Author"}</p>
                             <p class="card-text" title="${book.publish_date}">First Published : ${book.publish_date
